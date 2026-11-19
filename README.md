@@ -26,24 +26,20 @@ The Factory prepares a local branch and a pull request draft for each delivery.
 You'll need Git, Python 3.10 or newer, and an agent runner. Install the
 [Plannotator CLI](https://github.com/backnotprop/plannotator) for plan approval.
 
-```bash
-git clone https://github.com/maajix/software-factory.git
-factory_dir="$(cd software-factory && pwd)"
-```
-
 ### Claude Code
 
-Run Claude Code from the project you want to work on.
+In Claude Code, add the GitHub marketplace and install Factory.
 
-```bash
-claude --plugin-dir "$factory_dir" --add-dir "$factory_dir"
+```text
+/plugin marketplace add https://github.com/maajix/software-factory.git
+/plugin install factory@software-factory
 ```
 
-For a persistent installation, add the checkout as a local marketplace.
+The same install is available from the terminal.
 
 ```bash
-claude plugin marketplace add "$factory_dir" --scope user
-claude plugin install factory@factory-local --scope user
+claude plugin marketplace add https://github.com/maajix/software-factory.git
+claude plugin install factory@software-factory --scope user
 ```
 
 ### Codex
@@ -51,6 +47,8 @@ claude plugin install factory@factory-local --scope user
 Link the skill once, then open Codex in the project you want to work on.
 
 ```bash
+git clone https://github.com/maajix/software-factory.git
+factory_dir="$(cd software-factory && pwd)"
 mkdir -p "$HOME/.agents/skills"
 ln -s "$factory_dir/codex/skills/factory" "$HOME/.agents/skills/factory"
 ```
@@ -73,6 +71,8 @@ shared contract revision and holds affected tickets until their plans match it. 
 `/factory:learn` to see recurring signals and `/factory:eval` to capture a reproducible improvement.
 
 ## CLI and other runners
+
+Use a local Factory clone as `factory_dir`, as in the Codex setup above.
 
 ```bash
 "$factory_dir/bin/factory" --root /path/to/project detect

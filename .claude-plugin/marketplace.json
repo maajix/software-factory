@@ -1,5 +1,6 @@
 {
-  "name": "factory-local",
+  "name": "software-factory",
+  "description": "Local software delivery workflows for coding agents.",
   "owner": {"name": "maajix"},
   "plugins": [{"name": "factory", "source": "./"}]
 }
