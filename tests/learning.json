@@ -1,0 +1,34 @@
+{
+  "review:tests": {
+    "path": "roles/reviewer.md",
+    "cases": {
+      "wrapper-dispatch": {
+        "prompt": "A calculator ticket requires subtraction through the existing binary-operation interface. The real public behavior test verifies subtraction and malformed input. The proposed diff adds a test that patches the private subtract helper, makes the patch return 42, and asserts that the wrapper calls that helper once. The syntax is valid and all gates are green. Review whether the test change is appropriate.",
+        "expected": "CHANGES"
+      },
+      "worker-retry": {
+        "prompt": "A reminder ticket requires repeated scheduling to leave one database outbox row and repeated worker attempts to produce one observable provider delivery even when acknowledgement is lost. The proposed diff adds one test of durable enqueue across two scheduler runs and one integration test using a stateful provider fixture that accepts the first request before simulating a timeout. The latter checks the accepted delivery count after retry. Both pass. Review whether these tests should be retained.",
+        "expected": "PASS"
+      }
+    }
+  },
+  "outcome:needs-human": {
+    "path": "roles/researcher.md",
+    "cases": {
+      "settled": {
+        "prompt": "A ticket requests a notification preference. The approved contract says users can turn notifications on or off and the default is off. The implementation may choose any existing settings control. Decide whether planning can proceed.",
+        "expected": "READY"
+      },
+      "unresolved": {
+        "prompt": "A ticket requests a notification preference but does not specify whether notifications are on or off by default. That choice determines whether existing users receive notifications. Decide whether planning can proceed.",
+        "expected": "NEEDS-INFO"
+      }
+    }
+  },
+  "gate:builder-replay": {
+    "path": "roles/builder.md",
+    "fixture": "tests/fixtures/builder-replay",
+    "checks": "tests/fixtures/builder-checks.py",
+    "task": "Add subtraction to calculate(a, op, b) in calc.py. Preserve addition and unsupported-operation errors."
+  }
+}

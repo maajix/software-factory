@@ -1,0 +1,15 @@
+{
+  "repos": [{"path": ".", "base": "main"}],
+  "gates": [{
+    "id": "unit",
+    "repo": ".",
+    "cmd": "python3 -m unittest discover -s tests",
+    "expect_tests": true,
+    "timeout": 120
+  }],
+  "tracker": {"type": "markdown", "root": "docs/work", "layout": "flat", "require_plan_review": true},
+  "conventions": {
+    "branch_regex": "^(bugfix/patch|feature/minor|feature/major)-[a-z0-9-]+$",
+    "commit_regex": "^(FEAT|FIX|UPT|DOCS|REFACTOR|TEST|CHORE): \\S"
+  }
+}

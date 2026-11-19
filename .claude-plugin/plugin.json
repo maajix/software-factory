@@ -1,0 +1,6 @@
+{
+  "name": "factory",
+  "version": "1.0.0",
+  "description": "Self-adapting, self-improving software factory: init explores a repo and sets itself up; run drains the ticket queue through research, build, deterministic gates and fresh-context review; learn turns recurring failures into changes to its own roles and skills.",
+  "author": {"name": "maajix"}
+}

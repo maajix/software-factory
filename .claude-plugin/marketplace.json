@@ -1,0 +1,5 @@
+{
+  "name": "factory-local",
+  "owner": {"name": "maajix"},
+  "plugins": [{"name": "factory", "source": "./"}]
+}

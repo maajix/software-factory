@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+"""Entry point of the factory CLI. Standard library only; run with python3 3.10+."""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+
+from factory.cli import main  # noqa: E402
+
+sys.exit(main())

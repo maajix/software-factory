@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "SubagentStop": [
+      {"hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/bin/factory\" hook subagent-stop", "timeout": 30}]}
+    ],
+    "PreToolUse": [
+      {"matcher": "*",
+       "hooks": [{"type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/bin/factory\" hook guard", "timeout": 30}]}
+    ]
+  }
+}
