@@ -103,5 +103,4 @@ an instruction also requires a clean Factory checkout.
 
 - [Ticket format](docs/TICKETS.md)
 - [Design](DESIGN.md)
-- [Workflow research](docs/research/08-feature-workflow.md)
-- [Readiness verification](docs/work/factory-readiness/verification.md)
+- [Verification](docs/verification.md)

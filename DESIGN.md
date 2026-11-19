@@ -39,4 +39,4 @@ commit and fast-forwards the unchanged installation. Proposals without a matchin
 remain available for manual evaluation.
 
 See the [implementation boundaries](lib/factory/README.md) and the
-[workflow experiments](docs/research/08-feature-workflow.md).
+[verification summary](docs/verification.md).
